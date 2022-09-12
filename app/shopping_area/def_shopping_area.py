@@ -14,7 +14,7 @@ def shopping_area_create(name,eg_name,logo,banner,welcome,activity_rule,convert_
       mysql_engine.execute(f"alter database ShopArea_{eg_name} character set utf8;") #設定datebase字串編碼
       #創建商圈資料庫
       globals()[f'{eg_name}_engine'] = create_engine(f"mysql+pymysql://{sql_user}:{sql_password}@{sql_ip}:3306/ShopArea_{eg_name}")
-      globals()[f'{eg_name}_engine'].execute('create table shop( id serial not null primary key, shop_name varchar(20) not null, shop_id varchar(80) not null, shop_address varchar(255) not null, shop_phone varchar(20) not null, shop_qrcode longblob not null, shop_introduction varchar(300) not null, Engagement INT(255) not null);')
+      globals()[f'{eg_name}_engine'].execute('create table shop( id serial not null primary key, shop_name varchar(20) not null, shop_id varchar(80) not null, shop_address varchar(255) not null, shop_phone varchar(20) not null, shop_qrcode longblob not null, shop_introduction varchar(300) not null, lineOA_path varchar(255) not null, Engagement INT(255) not null);')
       if lottery_method == '0':
         globals()[f'{eg_name}_engine'].execute('create table lottery_user( id serial not null primary key, user_name varchar(20) not null, user_id varchar(20) not null, lottery_num varchar(20) not null);')
       elif lottery_method == '1':
