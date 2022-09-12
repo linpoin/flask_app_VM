@@ -57,6 +57,7 @@ def shopping_area_create(name,eg_name,logo,banner,welcome,activity_rule,convert_
         shop_name = shop_infor['shop_name']
         shop_phone = shop_infor['shop_phone']
         shop_introduction = shop_infor['shop_introduction']
+        lineOA_path = shop_infor['lineOA_path']
         
         #生成店家QRcode
         myqr.run(words = f'{shop_id}', # 可放網址或文字(限英文)
@@ -70,7 +71,7 @@ def shopping_area_create(name,eg_name,logo,banner,welcome,activity_rule,convert_
           qrcode_base64 = base64.b64encode(image_file.read())
 
         qrcode_base64 = 'data:image/png;base64,' + qrcode_base64.decode('utf-8')
-        sql_cmd = f"INSERT INTO shop (shop_name, shop_id, shop_address, shop_phone,shop_qrcode,shop_introduction,Engagement) VALUES ('{shop_name}','{shop_id}','{shop_address}','{shop_phone}','{qrcode_base64}','{shop_introduction}','{0}')"
+        sql_cmd = f"INSERT INTO shop (shop_name, shop_id, shop_address, shop_phone,shop_qrcode,shop_introduction,lineOA_path,Engagement) VALUES ('{shop_name}','{shop_id}','{shop_address}','{shop_phone}','{qrcode_base64}','{shop_introduction}','{lineOA_path}','{0}')"
         globals()[f'{eg_name}_engine'].execute(sql_cmd)
 
       #清空暫存資料夾

@@ -95,7 +95,7 @@ def shopping_area_signup():
             lottery_level_num = body_json['lottery_level_num']
             repeat_pass = body_json['repeat_pass']
             verification_method = body_json['verification_method']
-            prize_list = body_json['prize_list']
+            prize_list = body_json['prize_list']   
             
             return_me = shopping_area_create(name,eg_name,logo,banner,welcome,activity_rule,convert_prize_rule,lottery_method,shop_list,lottery_level_num,repeat_pass,verification_method,prize_list)
             return return_me
