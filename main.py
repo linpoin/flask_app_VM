@@ -8,7 +8,7 @@ from app.shopping_area.views import *
 from app.admin.views import *
 
 try:
-    datebase_create() #基本資料庫建置
+    datebase_create()  # 基本資料庫建置
 except:
     pass
 
@@ -26,12 +26,12 @@ app.config['SWAGGER'] = {
 CORS(app)
 Swagger(app)
 
-app.register_blueprint(base,url_prefix='/')
-app.register_blueprint(user,url_prefix='/user')
-app.register_blueprint(admin,url_prefix='/admin')
-app.register_blueprint(token,url_prefix='/token')
-app.register_blueprint(shopping_area,url_prefix='/shopping_area')
+app.register_blueprint(base, url_prefix='/')
+app.register_blueprint(user, url_prefix='/user')
+app.register_blueprint(admin, url_prefix='/admin')
+app.register_blueprint(token, url_prefix='/token')
+app.register_blueprint(shopping_area, url_prefix='/shopping_area')
 
-if __name__=='__main__':
+if __name__ == '__main__':
     print(app.url_map)
-    app.run('0.0.0.0',debug=True)
+    app.run('0.0.0.0', debug=True)

@@ -27,9 +27,9 @@ from MyQR import myqr
 import shutil
 
 
-shopping_area_data_path = './shopping_area_data' #商圈資料暫存區
+shopping_area_data_path = './shopping_area_data'  # 商圈資料暫存區
 
-#token產生
+# user_token產生
 def make_token(data):
     keys = 'mindnode'
     now = datetime.utcnow()
@@ -38,17 +38,32 @@ def make_token(data):
         'phone': data,
         'exp': now + expiretime,
     }
+    return jwt.encode(payload, keys, algorithm='HS256')
 
-    return jwt.encode(payload, keys, algorithm='HS256').decode("utf-8")
+# admin_token產生
+def admin_make_token(account, control):
+    keys = 'mindnode'
+    now = datetime.utcnow()
+    expiretime = timedelta(days=3)
+    payload = {
+        'account': account,
+        'control': control,
+        'exp': now + expiretime,
+    }
+    return jwt.encode(payload, keys, algorithm='HS256')
 
-    
-#密碼加密
+# token解析
+def decode_token(token):
+    return jwt.decode(token, 'mindnode',
+                algorithms=['HS256'])
+
+# 密碼加密
 def hash_password(password):
     bcrypt = Bcrypt()
     hashed_password = bcrypt.generate_password_hash(password=password).decode()
     return hashed_password
 
-#將輸出轉換成list
+# 將輸出轉換成list
 def execute_to_list(ex):
     rows = []
     for _row in ex.cursor._rows:
