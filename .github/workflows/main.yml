@@ -38,8 +38,10 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
+          username: ${{ secrets.USERNAME }}
           # PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSHKEY }}
+          key: ${{ secrets.SSHKEY }}
           script: | 
             cd C:/flask
+            git pull git@github.com:linpoin/flask_app_VM.git
+            docker-compose up --build -d
