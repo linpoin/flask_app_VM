@@ -45,5 +45,4 @@ jobs:
           passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: | 
             cd C:/flask/f
-            git clone git@github.com:linpoin/flask_app_VM.git
             docker-compose up --build -d
