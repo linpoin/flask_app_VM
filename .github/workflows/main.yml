@@ -40,8 +40,9 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           # PORT: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
-          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
+          password: ${{ secrets.PASSWORD }}
+          # key: ${{ secrets.SSHKEY }}
+          # passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: | 
             cd C:/flask
             git pull git@github.com:linpoin/flask_app_VM.git
