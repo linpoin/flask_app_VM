@@ -26,11 +26,14 @@ app.config['SWAGGER'] = {
 CORS(app)
 Swagger(app)
 
-app.register_blueprint(base, url_prefix='/')
-app.register_blueprint(user, url_prefix='/user')
-app.register_blueprint(admin, url_prefix='/admin')
-app.register_blueprint(token, url_prefix='/token')
-app.register_blueprint(shopping_area, url_prefix='/shopping_area')
+#base_url = ''
+base_url = '/api'
+
+app.register_blueprint(base, url_prefix=f'{base_url }/')
+app.register_blueprint(user, url_prefix=f'{base_url }/user')
+app.register_blueprint(admin, url_prefix=f'{base_url }/admin')
+app.register_blueprint(token, url_prefix=f'{base_url }/token')
+app.register_blueprint(shopping_area, url_prefix=f'{base_url }/shopping_area')
 
 if __name__ == '__main__':
     print(app.url_map)

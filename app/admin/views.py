@@ -33,7 +33,7 @@ def admin_current_info():
     if request.method == 'GET':
         token = request.headers.get('Authorize')
         if token == None:
-            return {'code': 401, 'message': '無附帶token'}
+            return {'code': 401, 'message': '無附帶token'}, 401
         else:
             try:
                 token_data = decode_token(token)
