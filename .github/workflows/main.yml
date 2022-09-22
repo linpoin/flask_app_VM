@@ -43,5 +43,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           # key: ${{ secrets.SSHKEY }}
           # passphrase: ${{ secrets.SERVER_PASSPHRASE }}
-          run: | 
+          script: | 
             echo test, and deploy your project.
