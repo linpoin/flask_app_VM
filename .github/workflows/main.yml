@@ -45,4 +45,3 @@ jobs:
           passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: | 
             cd C:/flask/f
-            docker-compose up --build -d
