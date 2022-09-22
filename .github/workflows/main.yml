@@ -43,5 +43,5 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
           script: | 
             cd C:/flask
-            git pull ssh://git@github.com:linpoin/flask_app_VM.git
+            git pull git@github.com:linpoin/flask_app_VM.git
             docker-compose up --build -d
