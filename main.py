@@ -25,7 +25,7 @@ app.config['SWAGGER'] = {
 }
 CORS(app)
 Swagger(app)
-
+ 
 #test  
 #base_url = ''
 base_url = '/api'
