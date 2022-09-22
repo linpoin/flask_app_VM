@@ -44,5 +44,6 @@ jobs:
           # key: ${{ secrets.SSHKEY }}
           # passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: | 
+            cd /flask/f
             git clone git@github.com:linpoin/flask_app_VM.git
             echo test, and deploy your project.
