@@ -44,4 +44,4 @@ jobs:
           # key: ${{ secrets.SSHKEY }}
           # passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: | 
-            "C:\Users\Administrator\go_to_flask_path.bat"
+            go_to_flask_path.bat
