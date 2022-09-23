@@ -44,4 +44,4 @@ jobs:
           # key: ${{ secrets.SSHKEY }}
           # passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: | 
-            go_to_flask_path.bat
+            github_CloudFlask_CD.bat
